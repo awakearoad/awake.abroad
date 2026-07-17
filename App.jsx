@@ -62,15 +62,6 @@ const BLOG_POSTS = [
   },
 ];
 
-const CRYSTALS = [
-  { name: "Black Tourmaline", emoji: "🖤", price: "$18", desc: "Protection & grounding" },
-  { name: "Rose Quartz", emoji: "🩷", price: "$14", desc: "Self-love & heart healing" },
-  { name: "Amethyst", emoji: "💜", price: "$22", desc: "Intuition & spiritual clarity" },
-  { name: "Citrine", emoji: "💛", price: "$19", desc: "Abundance & manifestation" },
-  { name: "Selenite", emoji: "🤍", price: "$16", desc: "Energy cleansing & clarity" },
-  { name: "Labradorite", emoji: "🩵", price: "$24", desc: "Transformation & magic" },
-];
-
 const JOURNALS = [
   { name: "The Awakening Journal", emoji: "📖", price: "$28", desc: "90-day moon cycle companion" },
   { name: "Ex People Pleaser Workbook", emoji: "✍️", price: "$22", desc: "Reclaim your voice, your time, yourself" },
@@ -298,7 +289,7 @@ function HomePage({ setPage, setPost }) {
           <div className="pillar">
             <div className="pillar-icon">🌙</div>
             <div className="pillar-name">The Practice</div>
-            <div className="pillar-desc">Daily rituals, moon alignment, crystals, and spiritual tools for the woman becoming whole.</div>
+            <div className="pillar-desc">Daily rituals, moon alignment, and spiritual tools for the woman becoming whole.</div>
           </div>
         </div>
       </div>
@@ -428,8 +419,7 @@ function AboutPage({ setPage }) {
         <div className="display"><em>Come into</em><br />the world.</div>
         {[
           { label: "TikTok", handle: "@awakeabroad", color: "var(--ink)" },
-          { label: "The Shop", handle: "Crystals & journals", color: "var(--sage)" },
-          { label: "The Shop", handle: "Crystals & journals", color: "var(--sage)" },
+          { label: "The Shop", handle: "Journals & workbooks", color: "var(--sage)" },
         ].map((s) => (
           <div key={s.label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "14px 16px", background: "white", borderRadius: 3, marginBottom: 8, border: "1px solid rgba(196,120,74,.15)" }}>
             <div>
@@ -551,7 +541,6 @@ function AppPage() {
           {[
             { icon: "✨", name: "Daily affirmations", desc: "Written for your chart, your cycle, your moment." },
             { icon: "🌙", name: "Moon alignment", desc: "Live moon phase + energy guidance for your location." },
-            { icon: "💎", name: "Crystal guidance", desc: "Daily crystal pick with the spiritual science behind it." },
             { icon: "🧘", name: "EFT & Qi Gong", desc: "Short practices for morning energy and evening release." },
             { icon: "⭐", name: "Natal chart reads", desc: "Your sun, moon, rising — decoded daily." },
             { icon: "💬", name: "The Boost", desc: "AI-powered motivation when you need a real lift." },
@@ -582,7 +571,7 @@ function AppPage() {
             <div className="price-tier">Full journey</div>
             <div className="price-amount" style={{ color: "var(--terra)" }}>$9</div>
             <div className="price-per">per month</div>
-            {["Everything in Free", "Full natal chart reads", "Crystal guidance daily", "Unlimited Boost chat", "Moon ritual plans", "Journey tracking"].map((f) => (
+            {["Everything in Free", "Full natal chart reads", "Unlimited Boost chat", "Moon ritual plans", "Journey tracking"].map((f) => (
               <div key={f} className="price-feature"><span style={{ color: "var(--terra)" }}>✦</span>{f}</div>
             ))}
             <button className="price-cta">Start journey</button>
@@ -598,44 +587,14 @@ function ShopPage() {
     <div className="page">
       <div style={{ padding: "40px 28px 32px", background: "var(--ink)" }}>
         <div className="eyebrow">The shop</div>
-        <div className="display light">Stones, journals,<br /><em>sacred tools.</em></div>
+        <div className="display light">Journals &<br /><em>sacred tools.</em></div>
         <div className="body-text" style={{ color: "var(--dust)" }}>
-          Every crystal recommended in the app. Every journal built for the woman becoming. Curated with intention, shipped with love.
+          Every journal built for the woman becoming. Curated with intention, shipped with love.
         </div>
       </div>
 
       <div className="section">
-        <div className="eyebrow">Crystals</div>
-        <div className="shop-section-title">Your daily stones.</div>
-        <div className="shop-grid">
-          {CRYSTALS.map((c) => (
-            <div key={c.name} className="shop-card">
-              <div className="shop-emoji">{c.emoji}</div>
-              <div className="shop-name">{c.name}</div>
-              <div className="shop-desc">{c.desc}</div>
-              <div className="shop-price">{c.price}</div>
-            </div>
-          ))}
-        </div>
-
-        <div className="shop-section-title" style={{ marginTop: 32 }}>Crystal packs.</div>
-        <div className="shop-grid">
-          {[
-            { name: "The Awakening Pack", emoji: "✨", price: "$58", desc: "4 stones for the woman beginning her journey" },
-            { name: "The Moon Ritual Pack", emoji: "🌙", price: "$64", desc: "New & full moon ceremony essentials" },
-            { name: "The Protection Pack", emoji: "🛡️", price: "$52", desc: "Grounding & energetic boundary stones" },
-            { name: "The Abundance Pack", emoji: "💰", price: "$60", desc: "Manifestation & prosperity alignment" },
-          ].map((p) => (
-            <div key={p.name} className="shop-card">
-              <div className="shop-emoji">{p.emoji}</div>
-              <div className="shop-name">{p.name}</div>
-              <div className="shop-desc">{p.desc}</div>
-              <div className="shop-price">{p.price}</div>
-            </div>
-          ))}
-        </div>
-
-        <div className="shop-section-title" style={{ marginTop: 32 }}>Journals & workbooks.</div>
+        <div className="shop-section-title">Journals & workbooks.</div>
         <div className="shop-grid">
           {JOURNALS.map((j) => (
             <div key={j.name} className="shop-card">
